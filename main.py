@@ -20,7 +20,8 @@ async def start_message(message:types.message):
     await bot.send_message(chat_id, text="Hello! I am math bot. Send me math example and i solve it!", parse_mode="Markdown")
 
 def math_solve(expression):
-    expression = expression.replace('×', '*').replace(':', '/').replace('÷', '/').replace('x', '*')
+    #replacing symbols such as multiplication and division entered from a computer keyboard with multiplication and division symbols from a smartphone keyboard
+    expression = expression.replace('×', '*').replace(':', '/').replace('÷', '/').replace('x', '*') 
     try:
         return eval(expression)
     except:
